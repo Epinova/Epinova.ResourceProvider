@@ -2,7 +2,7 @@
   <configSections>
     <section name="epinova.resourceprovider" type="Epinova.ResourceProvider.Configuration.ModuleSection, Epinova.ResourceProvider" restartOnExternalChanges="true" xdt:Transform="Insert" />
   </configSections>
-  <epinova.resourceprovider>
+  <epinova.resourceprovider xdt:Transform="Insert">
     <providers>
       <!--<add assembly="Foo" filetypes="cshtml" />-->
     </providers>
