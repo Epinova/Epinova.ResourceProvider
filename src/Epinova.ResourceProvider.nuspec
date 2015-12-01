@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+	<id>$id$</id>
+	<title>$id$</title>
+	<version>$version$</version>
+	<authors>Epinova</authors>
+	<owners>$author$ - Espen Lønnkvist</owners>  
+    <projectUrl>https://wiki.epinova.no/display/FAG/Epinova.ResourceProvider</projectUrl>
+    <iconUrl>http://www.epinova.no/favicon.ico</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Serves embedded resources</description>
+    <releaseNotes>First relase</releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <tags>Epinova EPiServer Embed Resource</tags>
+  </metadata>
+  <files>
+    <file src="readme.md" target="" />
+    <file src="\Web.config.install.xdt" target="content" />
+    <file src="\Web.config.uninstall.xdt" target="content" />
+  </files>
+</package>
