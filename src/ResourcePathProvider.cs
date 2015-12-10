@@ -42,7 +42,10 @@ namespace Epinova.ResourceProvider
 
         public override CacheDependency GetCacheDependency(string virtualPath, IEnumerable virtualPathDependencies, DateTime utcStart)
         {
-            return null;
+            if (PathMatches(virtualPath))
+                return null;
+
+            return base.GetCacheDependency(virtualPath, virtualPathDependencies, utcStart);
         }
 
         public override string GetFileHash(string virtualPath, IEnumerable virtualPathDependencies)
