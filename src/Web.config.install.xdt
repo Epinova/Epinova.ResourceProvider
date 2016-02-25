@@ -1,10 +1,11 @@
 <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
   <configSections>
-    <section name="epinova.resourceprovider" type="Epinova.ResourceProvider.Configuration.ModuleSection, Epinova.ResourceProvider" restartOnExternalChanges="true" xdt:Transform="Insert" />
+    <section name="epinova.resourceprovider" type="Epinova.ResourceProvider.Configuration.ModuleSection, Epinova.ResourceProvider" restartOnExternalChanges="true" xdt:Transform="InsertIfMissing" />
   </configSections>
-  <epinova.resourceprovider xdt:Transform="Insert">
+  <epinova.resourceprovider xdt:Transform="InsertIfMissing">
     <providers>
       <!--<add assembly="Foo" filetypes="cshtml" />-->
+      <!--<add assembly="Bar" provideLocalization="true" />-->
     </providers>
   </epinova.resourceprovider>
 </configuration>

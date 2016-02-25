@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-	<id>$id$</id>
-	<title>$id$</title>
-	<version>$version$</version>
-	<authors>Epinova</authors>
-	<owners>$author$ - Espen Lønnkvist</owners>  
+    <id>$id$</id>
+    <title>$id$</title>
+    <version>$version$</version>
+    <authors>Espen Lønnkvist</authors>
+    <owners>Epinova AS</owners>
     <projectUrl>https://wiki.epinova.no/display/FAG/Epinova.ResourceProvider</projectUrl>
     <iconUrl>http://www.epinova.no/favicon.ico</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Serves embedded resources</description>
-    <releaseNotes>First relase</releaseNotes>
-    <copyright>Copyright 2015</copyright>
-    <tags>Epinova EPiServer Embed Resource</tags>
+    <releaseNotes>Now with XML-provider, zomg!</releaseNotes>
+    <copyright>Copyright 2016 - Epinova AS</copyright>
+    <tags>Epinova EPiServer Embed Resource Xml Language</tags>
   </metadata>
   <files>
     <file src="readme.md" target="" />

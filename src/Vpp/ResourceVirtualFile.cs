@@ -2,7 +2,7 @@
 using System.Reflection;
 using System.Web.Hosting;
 
-namespace Epinova.ResourceProvider
+namespace Epinova.ResourceProvider.Vpp
 {
     internal class ResourceVirtualFile : VirtualFile
     {

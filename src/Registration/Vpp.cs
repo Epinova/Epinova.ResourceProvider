@@ -1,51 +1,39 @@
 ﻿using System;
-using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Web;
 using System.Web.Hosting;
 using Epinova.ResourceProvider.Configuration;
+using Epinova.ResourceProvider.Vpp;
 using EPiServer.Logging;
 
-namespace Epinova.ResourceProvider
+namespace Epinova.ResourceProvider.Registration
 {
-    internal static class Register
+    internal static class Vpp
     {
-        private static readonly ILogger Logger = LogManager.GetLogger(typeof (Register));
+        private static readonly ILogger Logger = LogManager.GetLogger(typeof (Vpp));
 
-        internal static void RegisterVppResources()
+        internal static void RegisterResources(Assembly assembly, AddElement include)
         {
             if (HttpContext.Current == null)
-                return;
-
-            foreach (AddElement include in ModuleSection.Configuration.Providers.Cast<AddElement>())
             {
-                Assembly assembly = Assembly.Load(include.Assembly);
+                Logger.Warning("No HttpContext found, aborting.");
+                return;
+            }
 
-                if (String.IsNullOrWhiteSpace(include.FileTypes))
-                    throw new ConfigurationErrorsException("You must provide a value for 'fileTypes'.");
+            string[] resourceNames = GetResourceNames(include.FileTypes, assembly);
 
-                Logger.Debug("Looking for resources in: " + assembly.GetName().Name);
-
-                string[] resourceNames = GetResourceNames(include, assembly);
-
-                foreach (string resourceName in resourceNames)
-                {
-                    RegisterResourcePath(resourceName, assembly);
-                }
+            foreach (string resourceName in resourceNames)
+            {
+                RegisterResourcePath(resourceName, assembly);
             }
         }
 
 
-        private static void Log(string message)
+        private static string[] GetResourceNames(string fileTypesRaw, Assembly assembly)
         {
-        }
-
-
-        private static string[] GetResourceNames(AddElement include, Assembly assembly)
-        {
-            string[] fileTypes = include.FileTypes.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
+            string[] fileTypes = fileTypesRaw.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
                 .Select(
                     type =>
                     {

@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Caching;
 using System.Web.Hosting;
 
-namespace Epinova.ResourceProvider
+namespace Epinova.ResourceProvider.Vpp
 {
     internal class ResourcePathProvider : VirtualPathProvider
     {
