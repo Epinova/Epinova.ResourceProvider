@@ -10,7 +10,7 @@ Use this if you
 
 Example:
 
-`
+```
 <epinova.resourceprovider>   
     <providers>   
       <!-- Views -->   
@@ -21,4 +21,4 @@ Example:
       <add assembly="Epinova.Baz" provideLocalization="true" />   
     </providers>   
   </epinova.resourceprovider>   
-`
+```
