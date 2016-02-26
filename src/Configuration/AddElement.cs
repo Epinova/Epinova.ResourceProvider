@@ -17,14 +17,10 @@ namespace Epinova.ResourceProvider.Configuration
             get { return (string)this["filetypes"]; }
         }
 
-        [ConfigurationProperty("provideLocalization")]
+        [ConfigurationProperty("provideLocalization", DefaultValue = false)]
         public virtual bool ProvideLocalization
         {
-            get
-            {
-                bool doProvide;
-                return bool.TryParse((string)this["provideLocalization"], out doProvide) && doProvide;
-            }
+            get { return (bool)this["provideLocalization"]; }
         }
     }
 }

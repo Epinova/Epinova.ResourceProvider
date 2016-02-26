@@ -64,7 +64,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Epinova.ResourceProvider.nuspec" />
-    <None Include="readme.md" />
     <None Include="Web.config.install.xdt" />
     <None Include="Web.config.uninstall.xdt" />
   </ItemGroup>
