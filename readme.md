@@ -11,14 +11,14 @@ Use this if you
 Example:
 
 `
-<epinova.resourceprovider xdt:Transform="InsertIfMissing">  
-    <providers>  
-      <!-- Views -->  
-	  <add assembly="Epinova.Foo" filetypes="cshtml" />  
-      <!-- JS/CSS -->  
-	  <add assembly="Epinova.Bar" filetypes="js,css" />  
-      <!-- Xml lang files-->  
-      <add assembly="Epinova.Baz" provideLocalization="true" />  
-    </providers>  
-  </epinova.resourceprovider>  
+<epinova.resourceprovider>   
+    <providers>   
+      <!-- Views -->   
+	  <add assembly="Epinova.Foo" filetypes="cshtml" />   
+      <!-- JS/CSS -->   
+	  <add assembly="Epinova.Bar" filetypes="js,css" />   
+      <!-- Xml lang files-->   
+      <add assembly="Epinova.Baz" provideLocalization="true" />   
+    </providers>   
+  </epinova.resourceprovider>   
 `
