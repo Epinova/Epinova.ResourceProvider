@@ -15,7 +15,6 @@
     <tags>Epinova EPiServer Embed Resource Xml Language</tags>
   </metadata>
   <files>
-    <file src="readme.md" target="" />
     <file src="\Web.config.install.xdt" target="content" />
     <file src="\Web.config.uninstall.xdt" target="content" />
   </files>
