@@ -4,11 +4,11 @@ using System.Web.Hosting;
 
 namespace Epinova.ResourceProvider.Vpp
 {
-    internal class ResourceVirtualFile : VirtualFile
+    public class ResourceVirtualFile : VirtualFile
     {
-        private string _resourceName;
+        private readonly string _resourceName;
         private readonly Assembly _assembly;
-        private bool _physicalResource;
+        private readonly bool _physicalResource;
 
 
         public ResourceVirtualFile(string virtualPath, string resourceName, Assembly assembly, bool physicalResource)

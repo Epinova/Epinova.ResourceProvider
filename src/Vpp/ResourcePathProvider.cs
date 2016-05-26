@@ -7,7 +7,7 @@ using System.Web.Hosting;
 
 namespace Epinova.ResourceProvider.Vpp
 {
-    internal class ResourcePathProvider : VirtualPathProvider
+    public class ResourcePathProvider : VirtualPathProvider
     {
         private readonly string _virtualPath;
         private readonly string _resourceName;
