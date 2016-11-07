@@ -30,10 +30,10 @@ namespace Epinova.ResourceProvider
                     throw new ConfigurationErrorsException(assemblyName + ": You must provide a value either for 'fileTypes' or 'provideLocalization'.");
 
                 if (include.ProvideLocalization)
-                    Localization.RegisterLocalization(assembly);
+                    LocalizationRegistration.Register(assembly);
     
                 if(!String.IsNullOrWhiteSpace(include.FileTypes))
-                    Registration.Vpp.RegisterResources(assembly, include);
+                    VppRegistration.Register(assembly, include);
             }
         }
 

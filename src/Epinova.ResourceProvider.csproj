@@ -56,15 +56,16 @@
     <Compile Include="Configuration\ModuleSection.cs" />
     <Compile Include="Configuration\ProvidersCollection.cs" />
     <Compile Include="Initializer.cs" />
+    <Compile Include="Embedding.cs" />
+    <Compile Include="Localization.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Registration\Localization.cs" />
-    <Compile Include="Registration\Vpp.cs" />
+    <Compile Include="Registration\LocalizationRegistration.cs" />
+    <Compile Include="Registration\VppRegistration.cs" />
     <Compile Include="Vpp\ResourcePathProvider.cs" />
     <Compile Include="Vpp\ResourceVirtualFile.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Epinova.ResourceProvider.nuspec" />
-    <None Include="Web.config.install.xdt" />
     <None Include="Web.config.uninstall.xdt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

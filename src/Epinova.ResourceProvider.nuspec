@@ -4,18 +4,16 @@
     <id>$id$</id>
     <title>$id$</title>
     <version>$version$</version>
-    <authors>Espen Lønnkvist</authors>
+    <authors>Espen Lønnkvist, Epinova AS</authors>
     <owners>Epinova AS</owners>
-    <projectUrl>https://wiki.epinova.no/display/FAG/Epinova.ResourceProvider</projectUrl>
+    <projectUrl>https://www.epinova.no/</projectUrl>
     <iconUrl>http://www.epinova.no/favicon.ico</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Serves embedded resources</description>
-    <releaseNotes>Now with XML-provider, zomg!</releaseNotes>
+    <description>Serves embedded resources from your assemblies, such as XML language-files or Razor views</description>
     <copyright>Copyright 2016 - Epinova AS</copyright>
     <tags>Epinova EPiServer Embed Resource Xml Language</tags>
   </metadata>
   <files>
-    <file src="\Web.config.install.xdt" target="content" />
     <file src="\Web.config.uninstall.xdt" target="content" />
   </files>
 </package>

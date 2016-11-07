@@ -10,11 +10,11 @@ using EPiServer.Logging;
 
 namespace Epinova.ResourceProvider.Registration
 {
-    internal static class Vpp
+    internal static class VppRegistration
     {
-        private static readonly ILogger Logger = LogManager.GetLogger(typeof (Vpp));
+        private static readonly ILogger Logger = LogManager.GetLogger(typeof (VppRegistration));
 
-        internal static void RegisterResources(Assembly assembly, AddElement include)
+        internal static void Register(Assembly assembly, AddElement include)
         {
             if (HttpContext.Current == null)
             {
@@ -23,6 +23,22 @@ namespace Epinova.ResourceProvider.Registration
             }
 
             string[] resourceNames = GetResourceNames(include.FileTypes, assembly);
+
+            foreach (string resourceName in resourceNames)
+            {
+                RegisterResourcePath(resourceName, assembly);
+            }
+        }
+
+        internal static void Register(Assembly assembly, string[] fileTypes)
+        {
+            if (HttpContext.Current == null)
+            {
+                Logger.Warning("No HttpContext found, aborting.");
+                return;
+            }
+
+            string[] resourceNames = GetAssemblyManifestResourceNames(assembly, fileTypes);
 
             foreach (string resourceName in resourceNames)
             {
@@ -48,6 +64,11 @@ namespace Epinova.ResourceProvider.Registration
                     })
                 .ToArray();
 
+            return GetAssemblyManifestResourceNames(assembly, fileTypes);
+        }
+
+        private static string[] GetAssemblyManifestResourceNames(Assembly assembly, string[] fileTypes)
+        {
             return assembly.GetManifestResourceNames()
                 .Where(
                     name =>
