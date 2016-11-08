@@ -32,6 +32,8 @@ namespace Epinova.ResourceProvider.Registration
 
         internal static void Register(Assembly assembly, string[] fileTypes)
         {
+            Logger.Debug(String.Format("Registering assembly: {0}", assembly.FullName));
+
             if (HttpContext.Current == null)
             {
                 Logger.Warning("No HttpContext found, aborting.");
@@ -78,7 +80,6 @@ namespace Epinova.ResourceProvider.Registration
                     })
                 .ToArray();
         }
-
 
         private static void RegisterResourcePath(string resourceName, Assembly assembly)
         {

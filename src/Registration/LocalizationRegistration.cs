@@ -51,7 +51,6 @@ namespace Epinova.ResourceProvider.Registration
                 }
 
                 providerService.Providers.Add(provider);
-
             }
             catch (Exception ex)
             {

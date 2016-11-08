@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System;
+using System.Reflection;
 using Epinova.ResourceProvider.Registration;
 
 namespace Epinova.ResourceProvider
@@ -6,12 +7,15 @@ namespace Epinova.ResourceProvider
     public static class Localization
     {
         /// <summary>
-        /// Register xml-files from the calling assembly in 
+        /// Register xml-files embedded in <paramref name="assembly"/> in 
         /// <see cref="EPiServer.Framework.Localization.LocalizationService"/>
         /// </summary>
-        public static void Register()
+        public static void Register(Assembly assembly)
         {
-            LocalizationRegistration.Register(Assembly.GetCallingAssembly());
+            if (assembly == null)
+                throw new ArgumentNullException(nameof(assembly), "Supplied assembly was null");
+
+            LocalizationRegistration.Register(assembly);
         }
     }
 }

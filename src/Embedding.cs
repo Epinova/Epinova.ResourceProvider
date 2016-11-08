@@ -7,18 +7,21 @@ namespace Epinova.ResourceProvider
     public static class Embedding
     {
         /// <summary>
-        /// Register VPP's for all embedded <paramref name="fileTypes"/> in the calling assembly
+        /// Register VPP's for all embedded <paramref name="fileTypes"/> in <paramref name="assembly"/>
         /// </summary>
         /// <example>
-        /// <para>Register("cshtml")</para>
-        /// <para>Register("cshtml", "css")</para>
+        /// <para>Register(Assembly.GetAssembly(typeof(MyClass)), "cshtml")</para>
+        /// <para>Register(Assembly.GetAssembly(typeof(MyClass)), "cshtml", "css", ...)</para>
         /// </example>
-        public static void Register(params string[] fileTypes)
+        public static void Register(Assembly assembly, params string[] fileTypes)
         {
-            if(fileTypes == null || fileTypes.Length == 0)
+            if (assembly == null)
+                throw new ArgumentNullException(nameof(assembly), "Supplied assembly was null");
+
+            if (fileTypes == null || fileTypes.Length == 0)
                 throw new ArgumentOutOfRangeException(nameof(fileTypes), "You need to supply at least one file-type");
 
-            VppRegistration.Register(Assembly.GetCallingAssembly(), fileTypes);
+            VppRegistration.Register(assembly, fileTypes);
         }
     }
 }
