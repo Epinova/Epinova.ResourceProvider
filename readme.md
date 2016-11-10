@@ -13,8 +13,13 @@ Usage:
 
 In Application_Start or initialization module
 ```
-Epinova.ResourceProvider.Localization.Register()
-Epinova.ResourceProvider.Embedding.Register("cshtml", "txt")
+
+// Xml files
+Epinova.ResourceProvider.Localization.Register(AssemblyAssembly.GetAssembly(typeof(MyType)))
+
+// Embedded resources
+Epinova.ResourceProvider.Embedding.Register(Assembly.GetAssembly(typeof(MyType)), "cshtml", "txt")
+
 ```
 
 Legacy mode. Don't use if not upgrading from older version
