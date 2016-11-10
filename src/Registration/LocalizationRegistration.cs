@@ -17,6 +17,8 @@ namespace Epinova.ResourceProvider.Registration
         {
             try
             {
+                Logger.Debug(String.Format("Looking for resources in assembly '{0}'", assembly.FullName));
+
                 var assemblyName = assembly.GetName().Name;
 
                 Logger.Log(Level.Debug, "{0}: Looking for XML-resources...", assemblyName);

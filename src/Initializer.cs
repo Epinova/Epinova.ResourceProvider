@@ -19,6 +19,8 @@ namespace Epinova.ResourceProvider
 
         public void Initialize(InitializationEngine context)
         {
+            Logger.Debug("Looking for resources in config");
+
             foreach (AddElement include in ModuleSection.Configuration.Providers.Cast<AddElement>())
             {
                 Assembly assembly = Assembly.Load(include.Assembly);
