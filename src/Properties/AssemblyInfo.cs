@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("Epinova.ResourceProvider")]
-[assembly: AssemblyDescription("A VPP provider for serving embedded content")]
+[assembly: AssemblyDescription("A provider for serving embedded views and language files")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Epinova AS")]
 [assembly: AssemblyProduct("Epinova.ResourceProvider")]
@@ -11,5 +11,5 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
 [assembly: Guid("b4baac1f-209e-480c-bffa-e969b5f2b898")]
-[assembly: AssemblyVersion("7.19.0.0")]
-[assembly: AssemblyFileVersion("7.19.0.0")]
+[assembly: AssemblyVersion("7.20.0.0")]
+[assembly: AssemblyFileVersion("7.20.0.0")]

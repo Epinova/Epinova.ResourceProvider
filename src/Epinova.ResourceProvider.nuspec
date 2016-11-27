@@ -9,7 +9,7 @@
     <projectUrl>https://www.epinova.no/</projectUrl>
     <iconUrl>http://www.epinova.no/favicon.ico</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Serves embedded resources from your assemblies, such as XML language-files or Razor views</description>
+    <description>Serves embedded XML language-files or Razor views from your assemblies</description>
     <copyright>Copyright 2016 - Epinova AS</copyright>
     <tags>Epinova EPiServer Embed Resource Xml Language</tags>
   </metadata>
