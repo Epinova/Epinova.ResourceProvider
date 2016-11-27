@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epinova.ResourceProvider", "src\Epinova.ResourceProvider.csproj", "{B4BAAC1F-209E-480C-BFFA-E969B5F2B898}"
 EndProject
@@ -9,6 +9,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		readme.md = readme.md
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{5B9F3857-79A0-44D7-BD82-FF3C74A237D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epinova.ResourceProvider.Tests", "tests\Epinova.ResourceProvider.Tests\Epinova.ResourceProvider.Tests.csproj", "{0563DFA6-F093-4E37-B8FC-58C9975D927E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,8 +24,15 @@ Global
 		{B4BAAC1F-209E-480C-BFFA-E969B5F2B898}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4BAAC1F-209E-480C-BFFA-E969B5F2B898}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4BAAC1F-209E-480C-BFFA-E969B5F2B898}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0563DFA6-F093-4E37-B8FC-58C9975D927E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0563DFA6-F093-4E37-B8FC-58C9975D927E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0563DFA6-F093-4E37-B8FC-58C9975D927E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0563DFA6-F093-4E37-B8FC-58C9975D927E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0563DFA6-F093-4E37-B8FC-58C9975D927E} = {5B9F3857-79A0-44D7-BD82-FF3C74A237D4}
 	EndGlobalSection
 EndGlobal

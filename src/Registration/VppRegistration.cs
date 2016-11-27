@@ -13,6 +13,7 @@ namespace Epinova.ResourceProvider.Registration
     internal static class VppRegistration
     {
         private static readonly ILogger Logger = LogManager.GetLogger(typeof (VppRegistration));
+        internal static Action<VirtualPathProvider> VppRegistrator = HostingEnvironment.RegisterVirtualPathProvider;
 
         internal static void Register(Assembly assembly, AddElement include)
         {
@@ -87,7 +88,7 @@ namespace Epinova.ResourceProvider.Registration
 
             string resourcePath = GetResourcePath(resourceName, assembly);
 
-            HostingEnvironment.RegisterVirtualPathProvider(new ResourcePathProvider(resourcePath, resourceName, assembly, false));
+            VppRegistrator(new ResourcePathProvider(resourcePath, resourceName, assembly, false));
 
             Logger.Debug("Registered as : " + resourcePath);
         }

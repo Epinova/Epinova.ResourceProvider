@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Epinova.ResourceProvider.nuspec" />
+    <None Include="packages.config" />
     <None Include="Web.config.uninstall.xdt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

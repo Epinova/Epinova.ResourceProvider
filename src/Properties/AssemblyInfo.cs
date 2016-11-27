@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("Epinova.ResourceProvider")]
@@ -13,3 +14,4 @@ using System.Runtime.InteropServices;
 [assembly: Guid("b4baac1f-209e-480c-bffa-e969b5f2b898")]
 [assembly: AssemblyVersion("7.20.0.0")]
 [assembly: AssemblyFileVersion("7.20.0.0")]
+[assembly: InternalsVisibleTo("Epinova.ResourceProvider.Tests")]

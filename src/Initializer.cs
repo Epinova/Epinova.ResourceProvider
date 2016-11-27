@@ -2,7 +2,6 @@
 using System.Configuration;
 using System.Linq;
 using System.Reflection;
-using System.Web;
 using Epinova.ResourceProvider.Configuration;
 using Epinova.ResourceProvider.Registration;
 using EPiServer.Framework;
