@@ -9,21 +9,45 @@ Use this if you have
   * language xml-files in your module and don't want to clutter up the lang-folder in you site.
   * language xml-files in your module, which needs to be included in non-web projects
 
-Usage
+Setup
 -------------
 
 In Application_Start or initialization module
 ```
 
-// Xml files
-Epinova.ResourceProvider.Localization.Register(AssemblyAssembly.GetAssembly(typeof(MyType)))
+// Serve xml language files
+Epinova.ResourceProvider.Localization.Register(typeof(MyType).Assembly)
 
-// Embedded resources
-Epinova.ResourceProvider.Embedding.Register(Assembly.GetAssembly(typeof(MyType)), "cshtml", "txt")
+// Serve embedded views
+Epinova.ResourceProvider.Embedding.Register(typeof(MyType).Assembly, "cshtml")
 
 ```
 
-Debugging
+Localization example
 -------------
 
+Razor
+```
+@Html.Translate("/some/key/in/embedded/file.xml")
+```
+
+C#
+```
+LocalizationService.Current.GetString.Translate("/some/key/in/embedded/xmlfile")
+```
+
+
+Embedding example
+-------------
+
+The path will be equal to the path of the embedded file in your solution-structure
+
+Views
+```
+return View("~/Views/My/Wonderful/View.cshtml");
+```
+
+
+Debugging
+-------------
 Set level=debug for namespace "Epinova.ResourceProvider" to get details about the registration process 
