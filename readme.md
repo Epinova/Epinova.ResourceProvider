@@ -19,7 +19,7 @@ In Application_Start or initialization module
 Epinova.ResourceProvider.Localization.Register(typeof(MyType).Assembly)
 
 // Serve embedded views
-Epinova.ResourceProvider.Embedding.Register(typeof(MyType).Assembly, "cshtml")
+Epinova.ResourceProvider.Views.Register(typeof(MyType).Assembly)
 
 ```
 
