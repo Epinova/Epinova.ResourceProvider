@@ -3,6 +3,8 @@ Epinova.ResourceProvider
 
 A provider for serving embedded content in Episerver solutions
 
+Supports Episerver 7.17+
+
 Use this if you have
   * views in your module and don't want to clutter up the Views-folder in your site
   * views in your module, which needs to be included in non-web projects
