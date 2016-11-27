@@ -55,6 +55,7 @@
     <Compile Include="Configuration\AddElement.cs" />
     <Compile Include="Configuration\ModuleSection.cs" />
     <Compile Include="Configuration\ProvidersCollection.cs" />
+    <Compile Include="Views.cs" />
     <Compile Include="Initializer.cs" />
     <Compile Include="Embedding.cs" />
     <Compile Include="Localization.cs" />

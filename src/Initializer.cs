@@ -2,6 +2,7 @@
 using System.Configuration;
 using System.Linq;
 using System.Reflection;
+using System.Web;
 using Epinova.ResourceProvider.Configuration;
 using Epinova.ResourceProvider.Registration;
 using EPiServer.Framework;
@@ -19,9 +20,13 @@ namespace Epinova.ResourceProvider
 
         public void Initialize(InitializationEngine context)
         {
-            Logger.Debug("Looking for resources in config");
+            var configElements = ModuleSection.Configuration.Providers.Cast<AddElement>().ToArray();
+            if (!configElements.Any())
+                return;
 
-            foreach (AddElement include in ModuleSection.Configuration.Providers.Cast<AddElement>())
+            Logger.Debug("Hooking up resources defined in config");
+
+            foreach (AddElement include in configElements)
             {
                 Assembly assembly = Assembly.Load(include.Assembly);
                 var assemblyName = assembly.GetName().Name;

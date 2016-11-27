@@ -4,6 +4,7 @@ using Epinova.ResourceProvider.Registration;
 
 namespace Epinova.ResourceProvider
 {
+    [Obsolete("Use Epinova.ResourceProvider.Views.Register()", true)]
     public static class Embedding
     {
         /// <summary>
