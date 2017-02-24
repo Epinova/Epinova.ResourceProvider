@@ -1,5 +1,4 @@
-﻿using System;
-using Xunit;
+﻿using Xunit;
 
 namespace Epinova.ResourceProvider.Tests
 {
@@ -14,15 +13,9 @@ namespace Epinova.ResourceProvider.Tests
 
 
         [Fact]
-        public void Register_ThrowsOnNullAssembly()
-        {
-            Assert.Throws<ArgumentNullException>(() => Localization.Register(null));
-        }
-
-        [Fact]
         public void Register_EmbeddedXmlFound_AddsProvider()
         {
-            Localization.Register(typeof(LocalizationTests).Assembly);
+            Register.Assembly<LocalizationTests>(ResourceType.Xml);
 
             Assert.True(_fixture.LocalizationService.Providers.Count > 0);
         }
