@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Web;
 using System.Web.Hosting;
 using Epinova.ResourceProvider.Registration;
@@ -16,11 +15,6 @@ namespace Epinova.ResourceProvider.Tests
             _fixture = fixture;
         }
 
-        [Fact]
-        public void Register_ThrowsOnNullAssembly()
-        {
-            Assert.Throws<ArgumentNullException>(() => Views.Register(null));
-        }
 
         [Fact]
         public void Register_EmbeddedViewFound_AddsVpp()
@@ -32,10 +26,11 @@ namespace Epinova.ResourceProvider.Tests
 
             VppRegistration.VppRegistrator = VppRegistrator;
 
-            Views.Register(typeof(LocalizationTests).Assembly);
+            Register.Assembly<ViewsTests>(ResourceType.View);
 
             Assert.True(_fixture.VppProviders.Count > 0);
         }
+
 
         private void VppRegistrator(VirtualPathProvider virtualPathProvider)
         {

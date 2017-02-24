@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommonCollectionFixture.cs" />
+    <Compile Include="RegisterTests.cs" />
     <Compile Include="LocalizationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestableProviderBasedLocalizationService.cs" />
@@ -99,6 +100,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Embedded.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Embedded.aspx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -4,7 +4,6 @@ using System.Linq;
 using System.Reflection;
 using System.Web;
 using System.Web.Hosting;
-using Epinova.ResourceProvider.Configuration;
 using Epinova.ResourceProvider.Vpp;
 using EPiServer.Logging;
 
@@ -14,23 +13,7 @@ namespace Epinova.ResourceProvider.Registration
     {
         private static readonly ILogger Logger = LogManager.GetLogger(typeof (VppRegistration));
         internal static Action<VirtualPathProvider> VppRegistrator = HostingEnvironment.RegisterVirtualPathProvider;
-
-        internal static void Register(Assembly assembly, AddElement include)
-        {
-            if (HttpContext.Current == null)
-            {
-                Logger.Warning("No HttpContext found, aborting.");
-                return;
-            }
-
-            string[] resourceNames = GetResourceNames(include.FileTypes, assembly);
-
-            foreach (string resourceName in resourceNames)
-            {
-                RegisterResourcePath(resourceName, assembly);
-            }
-        }
-
+        
         internal static void Register(Assembly assembly, string[] fileTypes)
         {
             Logger.Debug(String.Format("Registering assembly: {0}", assembly.FullName));
@@ -50,26 +33,6 @@ namespace Epinova.ResourceProvider.Registration
         }
 
 
-        private static string[] GetResourceNames(string fileTypesRaw, Assembly assembly)
-        {
-            string[] fileTypes = fileTypesRaw.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
-                .Select(
-                    type =>
-                    {
-                        string fileType = type.Trim();
-
-                        if (fileType.StartsWith("*"))
-                            fileType = fileType.Substring(1);
-                        if (fileType.StartsWith("."))
-                            fileType = fileType.Substring(1);
-
-                        return fileType;
-                    })
-                .ToArray();
-
-            return GetAssemblyManifestResourceNames(assembly, fileTypes);
-        }
-
         private static string[] GetAssemblyManifestResourceNames(Assembly assembly, string[] fileTypes)
         {
             return assembly.GetManifestResourceNames()
@@ -82,6 +45,7 @@ namespace Epinova.ResourceProvider.Registration
                 .ToArray();
         }
 
+
         private static void RegisterResourcePath(string resourceName, Assembly assembly)
         {
             Logger.Debug("Found resource: " + resourceName);
@@ -92,6 +56,7 @@ namespace Epinova.ResourceProvider.Registration
 
             Logger.Debug("Registered as : " + resourcePath);
         }
+
 
         private static string GetResourcePath(string resourceName, Assembly assembly)
         {

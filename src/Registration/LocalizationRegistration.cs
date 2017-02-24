@@ -11,7 +11,7 @@ namespace Epinova.ResourceProvider.Registration
 {
     internal static class LocalizationRegistration
     {
-        private static readonly ILogger Logger = LogManager.GetLogger(typeof(Localization));
+        private static readonly ILogger Logger = LogManager.GetLogger(typeof(LocalizationRegistration));
 
         internal static void Register(Assembly assembly)
         {
