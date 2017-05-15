@@ -1,5 +1,8 @@
-﻿namespace Epinova.ResourceProvider
+﻿using System;
+
+namespace Epinova.ResourceProvider
 {
+    [Flags]
     public enum ResourceType
     {
         None = 0,
