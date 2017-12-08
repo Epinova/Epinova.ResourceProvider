@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using System.Linq;
+using Xunit;
 
 namespace Epinova.ResourceProvider.Tests
 {
@@ -17,7 +18,7 @@ namespace Epinova.ResourceProvider.Tests
         {
             Register.Assembly<LocalizationTests>(ResourceType.Xml);
 
-            Assert.True(_fixture.LocalizationService.Providers.Count > 0);
+            Assert.True(_fixture.LocalizationService.ProviderList.Count() > 0);
         }
     }
 }

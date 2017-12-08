@@ -52,7 +52,7 @@ namespace Epinova.ResourceProvider.Registration
                     provider.Load(assembly.GetManifestResourceStream(xmlResource));
                 }
 
-                providerService.Providers.Add(provider);
+                providerService.AddProvider(provider);
             }
             catch (Exception ex)
             {
