@@ -12,6 +12,9 @@
     <description>Serves embedded XML language-files, Razor views or ASP.NET handlers from your assemblies</description>
     <copyright>Copyright 2016 - Epinova AS</copyright>
     <tags>Epinova EPiServer Embed Resource Xml Language</tags>
+    <dependencies>
+      <dependency id="EPiServer.Framework" version="[11.1, 12)" />
+    </dependencies>
   </metadata>
   <files>
     <file src="\Web.config.install.xdt" target="content" />
